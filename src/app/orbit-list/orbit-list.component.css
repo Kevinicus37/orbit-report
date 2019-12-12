@@ -14,20 +14,31 @@ table {
   overflow: hidden;
   margin: 12px 0;
   min-width: 300px;
-  background: rgb(17,196,209);
+  background: lightslategray;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
 }
 
 .header-row {
     background: #34495E;
-    color: #fff
+    color: #fff;
+    border-color: black;
 }
 
 th, td {
     text-align: left;
     margin: 5px 10px;
     padding: 6px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
 }
 
 .warning {
     background-color: red;
+}
+
+.even-row {
+    background-color: lightgray;
 }

@@ -8,6 +8,8 @@ import {Satellite} from '../satellite';
 })
 export class OrbitListComponent implements OnInit {
   @Input() satellites : Satellite[];
+
+  evenRow : boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -22,6 +24,11 @@ export class OrbitListComponent implements OnInit {
       }
       return 0;
     });
+  }
+
+  isEvenRow() : boolean {
+    this.evenRow = !this.evenRow;
+    return !this.evenRow;
   }
 
 }
