@@ -20,7 +20,7 @@ export class AppComponent {
        response.json().then(function(data) {
  
           let fetchedSatellites = data.satellites;
-          // TODO: loop over satellites
+          
           for (let i = 0; i < fetchedSatellites.length; i++){
             let satellite = new Satellite(fetchedSatellites[i].name,
               fetchedSatellites[i].type,
@@ -29,13 +29,33 @@ export class AppComponent {
               fetchedSatellites[i].operational);
             this.sourceList.push(satellite);
           }
-          // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
-          // TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);
           this.displayList = this.sourceList.slice(0);
        }.bind(this));
     }.bind(this));
  
  }
+
+ // This was when I was doing dynamic satellite types and confused about *when* I could use the @Input() data (not in the constructor).
+// satelliteCount() : [[string, number]] {
+//   let typeCounts : {[k: string] : any} = {};
+  
+//   typeCounts[""] = this.displayList.length;
+//   for (let i : number = 0; i < this.displayList.length; i++){
+//       let curType = this.displayList[i].type;
+//       if (!typeCounts[curType] || isNaN(Number(typeCounts[curType]))){
+//         typeCounts[curType] = 1;
+//       } else {
+//         typeCounts[curType]++;
+//       }
+//     }
+
+//     let output : [[string, number]]= [[this.sourceList[0].type, 1]];
+//     for (var type in typeCounts){
+//       output.push([type, typeCounts[type]]);
+//     }
+//     output.shift();
+//     return output;
+// }
 
  search(searchTerm: string){
    let matchingSatellites: Satellite[] = [];

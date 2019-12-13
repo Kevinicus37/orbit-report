@@ -3,3 +3,5 @@
     <label>Search:<input type="text" #searchTerm (keyup.enter)="search(searchTerm.value); searchTerm.value=''" /></label>
     <button (click)="search(searchTerm.value); searchTerm.value=''">Search</button>
 </div>
+<!-- <app-orbit-counts [typeCounts] = "satelliteCount()"></app-orbit-counts> -->
+<app-orbit-counts [satellites] = "displayList"></app-orbit-counts>
